@@ -32,6 +32,7 @@ License: For each use you must have a valid license purchased only from above li
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="{{url('assets/images/favicon.png')}}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
     @vite(['public/backend/assets/vendors/core/core.css',
 'public/backend/assets/fonts/feather-font/css/iconfont.css',
  'public/backend/assets/vendors/flag-icon-css/css/flag-icon.min.css',
@@ -93,6 +94,28 @@ License: For each use you must have a valid license purchased only from above li
 @vite(['public/backend/assets/vendors/core/core.js',
 'public/backend/assets/vendors/feather-icons/feather.min.js',
  'public/backend/assets/js/template.js'])
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<script>
+    @if(Session::has('message'))
+    var type = "{{ Session::get('alert-type','info') }}"
+    switch(type){
+        case 'info':
+            toastr.info(" {{ Session::get('message') }} ");
+            break;
+        case 'success':
+            toastr.success(" {{ Session::get('message') }} ");
+            break;
+        case 'warning':
+            toastr.warning(" {{ Session::get('message') }} ");
+            break;
+        case 'error':
+            toastr.error(" {{ Session::get('message') }} ");
+            break;
+    }
+    @endif
+</script>
 
 </body>
 </html>
