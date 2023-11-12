@@ -16,6 +16,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<!-- Plugin css for this page -->
+  <link rel="stylesheet" href="{{ asset('backend/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.css') }}">
+  <!-- End plugin css for this page -->
     <!-- End fonts -->
     <link rel="shortcut icon" href="{{url('public/assets/images/favicon.png')}}">
     <!-- core:css -->
@@ -57,7 +60,11 @@
  'public/backend/assets/vendors/flatpickr/flatpickr.min.js',
   'public/backend/assets/vendors/apexcharts/apexcharts.min.js',
    'public/backend/assets/vendors/feather-icons/feather.min.js',
-    'public/backend/assets/js/template.js', 'public/backend/assets/js/dashboard-dark.js'])
+    'public/backend/assets/js/template.js', 'public/backend/assets/js/dashboard-dark.js',
+    'public/backend/assets/vendors/datatables.net/jquery.dataTables.js',
+    'public/backend/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.js',
+    'public/backend/assets/js/data-table.js'])
+
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
