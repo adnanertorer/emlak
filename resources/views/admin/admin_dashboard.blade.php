@@ -16,6 +16,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<!-- Plugin css for this page -->
+  <link rel="stylesheet" href="{{ asset('backend/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.css') }}">
+  <!-- End plugin css for this page -->
     <!-- End fonts -->
     <link rel="shortcut icon" href="{{url('public/assets/images/favicon.png')}}">
     <!-- core:css -->
@@ -25,7 +28,8 @@
   'public/backend/assets/fonts/feather-font/css/iconfont.css',
    'public/backend/assets/vendors/flag-icon-css/css/flag-icon.min.css',
     'public/backend/assets/css/demo2/style.css',
-     'public/backend/assets/images/favicon.png'])
+     'public/backend/assets/images/favicon.png','public/backend/assets/vendors/select2/select2.min.css',
+                'public/backend/assets/vendors/jquery-tags-input/jquery.tagsinput.min.css'])
     <!-- End layout styles -->
 </head>
 
@@ -50,14 +54,25 @@
 
         </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!-- core:js -->
-
     @vite(['public/backend/assets/vendors/core/core.js',
  'public/backend/assets/vendors/flatpickr/flatpickr.min.js',
   'public/backend/assets/vendors/apexcharts/apexcharts.min.js',
    'public/backend/assets/vendors/feather-icons/feather.min.js',
-    'public/backend/assets/js/template.js', 'public/backend/assets/js/dashboard-dark.js'])
+    'public/backend/assets/js/template.js', 'public/backend/assets/js/dashboard-dark.js',
+    'public/backend/assets/vendors/datatables.net/jquery.dataTables.js',
+    'public/backend/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.js',
+    'public/backend/assets/js/data-table.js','public/backend/assets/js/code/code.js',
+    'public/backend/assets/js/code/validate.min.js','public/backend/assets/vendors/inputmask/jquery.inputmask.min.js',
+                'public/backend/assets/vendors/select2/select2.min.js',
+                'public/backend/assets/vendors/typeahead.js/typeahead.bundle.min.js',
+                'public/backend/assets/vendors/jquery-tags-input/jquery.tagsinput.min.js',
+                'public/backend/assets/js/inputmask.js',
+                'public/backend/assets/js/select2.js',
+                'public/backend/assets/js/typeahead.js',
+                'public/backend/assets/js/tags-input.js', 'public/backend/assets/vendors/tinymce/tinymce.min.js',
+                'public/backend/assets/js/tinymce.js'])
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
