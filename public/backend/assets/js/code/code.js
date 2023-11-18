@@ -3,18 +3,19 @@ $(function(){
         e.preventDefault();
         const link = $(this).attr("href");
         Swal.fire({
-            title: 'Are you sure?',
-            text: "Delete This Data?",
+            title: 'Emin misiniz?',
+            text: "Kayıt silinecek",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonText: 'Evet',
+            cancelButtonText: 'Hayır'
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location.href = link
                 Swal.fire(
-                    'Deleted!',
+                    'Kayıt Silindi!',
                     'Your file has been deleted.',
                     'success'
                 )
