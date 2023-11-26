@@ -60,19 +60,23 @@
  'public/backend/assets/vendors/flatpickr/flatpickr.min.js',
   'public/backend/assets/vendors/apexcharts/apexcharts.min.js',
    'public/backend/assets/vendors/feather-icons/feather.min.js',
-    'public/backend/assets/js/template.js', 'public/backend/assets/js/dashboard-dark.js',
+    'public/backend/assets/js/template.js',
+    'public/backend/assets/js/dashboard-dark.js',
     'public/backend/assets/vendors/datatables.net/jquery.dataTables.js',
     'public/backend/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.js',
-    'public/backend/assets/js/data-table.js','public/backend/assets/js/code/code.js',
-    'public/backend/assets/js/code/validate.min.js','public/backend/assets/vendors/inputmask/jquery.inputmask.min.js',
+    'public/backend/assets/js/data-table.js',
+    'public/backend/assets/js/code/code.js',
+    'public/backend/assets/js/code/validate.min.js',
+    'public/backend/assets/vendors/inputmask/jquery.inputmask.min.js',
                 'public/backend/assets/vendors/select2/select2.min.js',
-                'public/backend/assets/vendors/typeahead.js/typeahead.bundle.min.js',
                 'public/backend/assets/vendors/jquery-tags-input/jquery.tagsinput.min.js',
                 'public/backend/assets/js/inputmask.js',
                 'public/backend/assets/js/select2.js',
-                'public/backend/assets/js/typeahead.js',
-                'public/backend/assets/js/tags-input.js', 'public/backend/assets/vendors/tinymce/tinymce.min.js',
+                'public/backend/assets/js/tags-input.js',
+                'public/backend/assets/vendors/tinymce/tinymce.min.js',
                 'public/backend/assets/js/tinymce.js'])
+
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 

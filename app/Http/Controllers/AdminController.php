@@ -30,6 +30,13 @@ class AdminController extends Controller
         return redirect('/admin/login')->with($notification);
     }// End Method
 
+    public function AllAgent(){
+
+        $allagent = User::where('role','agent')->get();
+        return view('backend.agentuser.all_agent',compact('allagent'));
+
+    }// En
+
 
     public function AdminLogin(){
 
@@ -121,6 +128,46 @@ class AdminController extends Controller
         );
 
         return back()->with($notification);
+
+    }// End Method
+
+    public function AddAgent(){
+
+        return view('backend.agentuser.add_agent');
+
+    }// End Method
+
+
+    public function StoreAgent(Request $request){
+
+        User::insert([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'password' => Hash::make($request->password),
+            'role' => 'agent',
+            'status' => 'active',
+        ]);
+
+
+        $notification = array(
+            'message' => 'Agent Created Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.agent')->with($notification);
+
+
+    }// End Method
+
+    public function changeStatus(Request $request){
+
+        $user = User::find($request->user_id);
+        $user->status = $request->status;
+        $user->save();
+
+        return response()->json(['success'=>'Status Change Successfully']);
 
     }// End Method
 
