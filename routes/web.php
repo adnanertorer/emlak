@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\PropertyTypeController;
 use App\Http\Controllers\Backend\PropertyController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -65,8 +66,13 @@ Route::middleware(['auth','role:agent'])->group(function(){
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login')->middleware(RedirectIfAuthenticated::class);
 
-
-
+Route::get('/agent/login', [AgentController::class, 'AgentLogin'])->name('agent.login')->middleware(RedirectIfAuthenticated::class);
+Route::post('/agent/register', [AgentController::class, 'AgentRegister'])->name('agent.register');
+Route::get('/agent/logout', [AgentController::class, 'AgentLogout'])->name('agent.logout');
+Route::get('/agent/profile', [AgentController::class, 'AgentProfile'])->name('agent.profile');
+Route::post('/agent/profile/store', [AgentController::class, 'AgentProfileStore'])->name('agent.profile.store');
+Route::get('/agent/change/password', [AgentController::class, 'AgentChangePassword'])->name('agent.change.password');
+Route::post('/agent/update/password', [AgentController::class, 'AgentUpdatePassword'])->name('agent.update.password');
 /// Admin Group Middleware
 Route::middleware(['auth','role:admin'])->group(function(){
     // Property Type All Route

@@ -49,22 +49,14 @@
                                 @include('frontend.dashboard.dashboard_sidebar')
                             </div>
                         </div>
-
                     </div>
                 </div>
-
                 <div class="col-lg-8 col-md-12 col-sm-12 content-side">
                     <div class="blog-details-content">
                         <div class="news-block-one">
                             <div class="inner-box">
-
                                 <div class="lower-content">
                                     <h3>Including Animation In Your Design System.</h3>
-
-
-
-
-
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <div class="card-body" style="background-color: #1baf65;">
@@ -81,7 +73,6 @@
 
                                             </div>
                                         </div>
-
 
                                         <div class="col-md-4">
                                             <div class="card-body" style="background-color: #002758;">
