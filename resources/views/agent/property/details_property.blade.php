@@ -1,5 +1,5 @@
-@extends('admin.admin_dashboard')
-@section('admin')
+@extends('agent.agent_dashboard')
+@section('agent')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <div class="page-content">
@@ -84,8 +84,6 @@
                                         @endif
                                     </td>
                                 </tr>
-
-
                                 </tbody>
                             </table>
                         </div>
@@ -95,23 +93,17 @@
             <div class="col-md-6 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-
-
                         <div class="table-responsive">
                             <table class="table table-striped">
-
                                 <tbody>
                                 <tr>
                                     <td>Property Code </td>
                                     <td><code>{{ $property->property_code }}</code></td>
                                 </tr>
-
                                 <tr>
                                     <td>Property Size </td>
                                     <td><code>{{ $property->property_size }}</code></td>
                                 </tr>
-
-
                                 <tr>
                                     <td>Property Video</td>
                                     <td><code>{{ $property->property_video }}</code></td>
@@ -151,46 +143,17 @@
                                         </select>
                                     </td>
                                 </tr>
-
-
                                 <tr>
                                     <td>Agent </td>
-
                                     @if($property->agent_id == NULL)
                                         <td><code> Admin </code></td>
                                     @else
                                         <td><code> {{ $property['user']['name'] }} </code></td>
                                     @endif
-
                                 </tr>
-
-
                                 </tbody>
                             </table>
-
                             <br><br>
-                            @if($property->status == 1)
-                                <form method="post" action="{{ route('inactive.property') }}" >
-                                    @csrf
-                                    <input type="hidden" name="id" value="{{ $property->id }}">
-                                    <button type="submit" class="btn btn-primary">InActive </button>
-
-                                </form>
-
-                            @else
-
-                                <form method="post" action="{{ route('active.property') }}" >
-                                    @csrf
-                                    <input type="hidden" name="id" value="{{ $property->id }}">
-
-                                    <button type="submit" class="btn btn-primary">Active </button>
-
-                                </form>
-
-                            @endif
-
-
-
                         </div>
                     </div>
                 </div>
