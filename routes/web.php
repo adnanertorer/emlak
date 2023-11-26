@@ -114,3 +114,11 @@ Route::controller(PropertyController::class)->group(function(){
     Route::post('/inactive/property', 'InactiveProperty')->name('inactive.property');
     Route::post('/active/property', 'ActiveProperty')->name('active.property');
 });
+
+
+Route::controller(AdminController::class)->group(function(){
+    Route::get('/all/agent', 'AllAgent')->name('all.agent');
+    Route::get('/add/agent', 'AddAgent')->name('add.agent');
+    Route::post('/store/agent', 'StoreAgent')->name('store.agent');
+    Route::get('/changeStatus', 'changeStatus');
+});
