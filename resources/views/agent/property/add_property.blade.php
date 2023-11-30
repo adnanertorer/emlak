@@ -1,23 +1,13 @@
 @extends('agent.agent_dashboard')
 @section('agent')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-
     <div class="page-content">
-
-
         <div class="row profile-body">
-            <!-- left wrapper start -->
-
-            <!-- left wrapper end -->
-            <!-- middle wrapper start -->
             <div class="col-md-12 col-xl-12 middle-wrapper">
                 <div class="row">
-
                     <div class="card">
                         <div class="card-body">
-                            <h6 class="card-title">Add Property </h6>
-
-
+                            <h6 class="card-title">Yeni İlan </h6>
                             <form method="post" action="{{ route('agent.store.property') }}" id="myForm" enctype="multipart/form-data">
                                 @csrf
 
@@ -25,13 +15,13 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group mb-3">
-                                            <label class="form-label">Property Name </label>
+                                            <label class="form-label">İlan Adı </label>
                                             <input type="text" name="property_name" class="form-control"  >
                                         </div>
                                     </div><!-- Col -->
                                     <div class="col-sm-6">
                                         <div class="form-group mb-3">
-                                            <label class="form-label">Property Status</label>
+                                            <label class="form-label">İlan Durumu</label>
                                             <select name="property_status" class="form-select" id="exampleFormControlSelect1">
                                                 <option selected="" disabled="">Select Status</option>
                                                 <option value="rent">For Rent</option>
@@ -43,7 +33,7 @@
 
                                     <div class="col-sm-6">
                                         <div class="form-group mb-3">
-                                            <label class="form-label">Lowest Price </label>
+                                            <label class="form-label">En Düşük Fiyat </label>
                                             <input type="text" name="lowest_price" class="form-control"  >
                                         </div>
                                     </div><!-- Col -->
@@ -51,7 +41,7 @@
 
                                     <div class="col-sm-6">
                                         <div class="form-group mb-3">
-                                            <label class="form-label">Max Price </label>
+                                            <label class="form-label">En Yüksek Fiyat </label>
                                             <input type="text" name="max_price" class="form-control"  >
                                         </div>
                                     </div><!-- Col -->
@@ -59,7 +49,7 @@
 
                                     <div class="col-sm-6">
                                         <div class="form-group mb-3">
-                                            <label class="form-label">Main Thambnail </label>
+                                            <label class="form-label">Ana Görsel</label>
                                             <input type="file" name="property_thambnail" class="form-control" onChange="mainThamUrl(this)"  >
 
                                             <img src="" id="mainThmb">
@@ -71,45 +61,36 @@
 
                                     <div class="col-sm-6">
                                         <div class="form-group mb-3">
-                                            <label class="form-label">Multiple Image </label>
+                                            <label class="form-label">Görseller</label>
                                             <input type="file" name="multi_img[]" class="form-control" id="multiImg" multiple="" >
-
                                             <div class="row" id="preview_img"> </div>
-
                                         </div>
                                     </div><!-- Col -->
-
-
-
-
-
                                 </div><!-- Row -->
-
-
 
                                 <div class="row">
                                     <div class="col-sm-3">
                                         <div class="mb-3">
-                                            <label class="form-label">BedRooms</label>
+                                            <label class="form-label">Yatak Odası</label>
                                             <input type="text" name="bedrooms"  class="form-control" >
                                         </div>
                                     </div><!-- Col -->
                                     <div class="col-sm-3">
                                         <div class="mb-3">
-                                            <label class="form-label">Bathrooms</label>
+                                            <label class="form-label">Banyo</label>
                                             <input type="text" name="bathrooms"  class="form-control" >
                                         </div>
                                     </div><!-- Col -->
                                     <div class="col-sm-3">
                                         <div class="mb-3">
-                                            <label class="form-label">Garage</label>
+                                            <label class="form-label">Garaj</label>
                                             <input type="text" name="garage"  class="form-control" >
                                         </div>
                                     </div><!-- Col -->
 
                                     <div class="col-sm-3">
                                         <div class="mb-3">
-                                            <label class="form-label">Garage Size</label>
+                                            <label class="form-label">Garaj m2</label>
                                             <input type="text" name="garage_size"  class="form-control" >
                                         </div>
                                     </div><!-- Col -->
@@ -120,26 +101,26 @@
                                 <div class="row">
                                     <div class="col-sm-3">
                                         <div class="mb-3">
-                                            <label class="form-label">Address</label>
+                                            <label class="form-label">Adres</label>
                                             <input type="text" name="address"  class="form-control" >
                                         </div>
                                     </div><!-- Col -->
                                     <div class="col-sm-3">
                                         <div class="mb-3">
-                                            <label class="form-label">City</label>
+                                            <label class="form-label">İl</label>
                                             <input type="text" name="city"  class="form-control" >
                                         </div>
                                     </div><!-- Col -->
                                     <div class="col-sm-3">
                                         <div class="mb-3">
-                                            <label class="form-label">State</label>
+                                            <label class="form-label">İlçe</label>
                                             <input type="text" name="state"  class="form-control" >
                                         </div>
                                     </div><!-- Col -->
 
                                     <div class="col-sm-3">
                                         <div class="mb-3">
-                                            <label class="form-label">Postal Code </label>
+                                            <label class="form-label">Posta Kodu</label>
                                             <input type="text" name="postal_code"  class="form-control" >
                                         </div>
                                     </div><!-- Col -->
@@ -150,40 +131,36 @@
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <div class="mb-3">
-                                            <label class="form-label">Property Size</label>
+                                            <label class="form-label">Emlak m2</label>
                                             <input type="text" name="property_size"  class="form-control" >
                                         </div>
                                     </div><!-- Col -->
                                     <div class="col-sm-4">
                                         <div class="mb-3">
-                                            <label class="form-label">Property Video</label>
+                                            <label class="form-label">Video</label>
                                             <input type="text" name="property_video"  class="form-control" >
                                         </div>
                                     </div><!-- Col -->
                                     <div class="col-sm-4">
                                         <div class="mb-3">
-                                            <label class="form-label">Neighborhood</label>
+                                            <label class="form-label">Mahalle</label>
                                             <input type="text" name="neighborhood"  class="form-control" >
                                         </div>
                                     </div><!-- Col -->
 
-
                                 </div><!-- Row -->
-
-
-
 
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="mb-3">
-                                            <label class="form-label">Latitude</label>
+                                            <label class="form-label">Enlem</label>
                                             <input type="text" name="latitude" class="form-control" >
                                             <a href="https://www.latlong.net/convert-address-to-lat-long.html" target="_blank">Go here to get Latitude from address</a>
                                         </div>
                                     </div><!-- Col -->
                                     <div class="col-sm-6">
                                         <div class="mb-3">
-                                            <label class="form-label">Longitude</label>
+                                            <label class="form-label">Boylam</label>
                                             <input type="text" name="longitude" class="form-control" >
                                             <a href="https://www.latlong.net/convert-address-to-lat-long.html" target="_blank">Go here to get Longitude from address</a>
                                         </div>
@@ -195,7 +172,7 @@
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <div class="mb-3">
-                                            <label class="form-label">Property Type </label>
+                                            <label class="form-label">Emlak Tipi </label>
                                             <select name="ptype_id" class="form-select" id="exampleFormControlSelect1">
                                                 <option selected="" disabled="">Select Type</option>
                                                 @foreach($propertytype as $ptype)
@@ -206,7 +183,7 @@
                                     </div><!-- Col -->
                                     <div class="col-sm-4">
                                         <div class="mb-3">
-                                            <label class="form-label">Property Amenities </label>
+                                            <label class="form-label">Özellikler </label>
                                             <select name="amenities_id[]" class="js-example-basic-multiple form-select" multiple="multiple" data-width="100%">
 
                                                 @foreach($amenities as $ameni)
@@ -224,7 +201,7 @@
 
                                 <div class="col-sm-12">
                                     <div class="mb-3">
-                                        <label class="form-label">Short Description</label>
+                                        <label class="form-label">Kısa Açıklama</label>
                                         <textarea name="short_descp" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 
                                     </div>
@@ -234,10 +211,8 @@
 
                                 <div class="col-sm-12">
                                     <div class="mb-3">
-                                        <label class="form-label">Long Description</label>
-
+                                        <label class="form-label">Açıklama</label>
                                         <textarea name="long_descp" class="form-control" name="tinymce" id="tinymceExample" rows="10"></textarea>
-
                                     </div>
                                 </div><!-- Col -->
 
@@ -269,7 +244,7 @@
                                 <div class="row add_item">
                                     <div class="col-md-4">
                                         <div class="mb-3">
-                                            <label for="facility_name" class="form-label">Facilities </label>
+                                            <label for="facility_name" class="form-label">Tesisler </label>
                                             <select name="facility_name[]" id="facility_name" class="form-control">
                                                 <option value="">Select Facility</option>
                                                 <option value="Hospital">Hospital</option>
@@ -299,7 +274,7 @@
 
 
 
-                                <button type="submit" class="btn btn-primary">Save Changes </button>
+                                <button type="submit" class="btn btn-primary">Kaydet </button>
 
 
                             </form>

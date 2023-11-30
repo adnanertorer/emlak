@@ -6,7 +6,7 @@
 <nav class="sidebar">
     <div class="sidebar-header">
         <a href="#" class="sidebar-brand">
-            Easy<span>Admin</span>
+            Acente<span> Paneli</span>
         </a>
         <div class="sidebar-toggler not-active">
             <span></span>
@@ -24,31 +24,27 @@
                 </a>
             </li>
             @if($status === 'active')
-            <li class="nav-item nav-category">RealEstate</li>
+            <li class="nav-item nav-category">Acente Paneli</li>
 
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#property" role="button" aria-expanded="false" aria-controls="emails">
                     <i class="link-icon" data-feather="mail"></i>
-                    <span class="link-title">Property  </span>
+                    <span class="link-title">Emlak Yönetimi</span>
                     <i class="link-arrow" data-feather="chevron-down"></i>
                 </a>
                 <div class="collapse" id="property">
                     <ul class="nav sub-menu">
                         <li class="nav-item">
-                            <a href="{{ route('agent.all.property') }}" class="nav-link">All Property</a>
+                            <a href="{{ route('agent.all.property') }}" class="nav-link">İlan Listesi</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ route('agent.add.property') }}" class="nav-link">Add Property</a>
-                        </li>
-
                     </ul>
                 </div>
             </li>
 
             <li class="nav-item">
-                <a href="pages/apps/calendar.html" class="nav-link">
+                <a href="{{ route('buy.package') }}" class="nav-link">
                     <i class="link-icon" data-feather="calendar"></i>
-                    <span class="link-title">Calendar</span>
+                    <span class="link-title">Paket Satın Al</span>
                 </a>
             </li>
 
