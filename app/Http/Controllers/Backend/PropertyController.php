@@ -13,6 +13,8 @@ use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Carbon\Carbon;
+use App\Models\PackagePlan;
+use Barryvdh\DomPDF\Facade\Pdf;
 class PropertyController extends Controller
 {
     public function AllProperty(){
@@ -407,4 +409,23 @@ class PropertyController extends Controller
 
     }// End Method
 
+    public function AdminPackageHistory(){
+
+        $packagehistory = PackagePlan::latest()->get();
+        return view('backend.package.package_history',compact('packagehistory'));
+
+
+    }// End Method
+
+    public function PackageInvoice($id){
+
+        $packagehistory = PackagePlan::where('id',$id)->first();
+
+        $pdf = Pdf::loadView('backend.package.package_history_invoice', compact('packagehistory'))->setPaper('a4')->setOption([
+            'tempDir' => public_path(),
+            'chroot' => public_path(),
+        ]);
+        return $pdf->download('invoice.pdf');
+
+    }// End Method
 }
